@@ -4,56 +4,48 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Caculateur de conquête pour le jeu Royal Revolt 2 de Flare Game" />
-		
-		<title>RR2 - Conquête calculator - By Sir Lunar Knight from France 98</title>
-		
+		<meta name="description" content="Calculateur de conquête pour le jeu Royal Revolt 2 de Flare Game - By Sir Lunar Knight - From France 98" />
+
+		<title>RR2 - Conquest calculator - Calc by Sir Lunar Knight - Dev by France 98</title>
+
 		<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
 		<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
 	</head>
 	<body>
 		<div class="container grid-xs">
-			<h1 class="text-center mb-0">Conquête Calculator</h1>
+			<h1 class="text-center mb-0">Conquest Calculator</h1>
 			<div class="text-center mb-2 text-primary">
-				<b>By Sir Lunar Knight from France 98</b>
+				<b>Calc by Sir Lunar Knight - Dev by France 98</b>
 			</div>
 
 			<table class="table">
 				<tbody>
 					<tr>
+						<td></td>
 						<td class="text-center"><b>Vous</b></td>
 						<td class="text-center"><b>Adversaire</b></td>
 					</tr>
-					
-					<tr class="bg-secondary">
-						<td class="text-center" colspan="2"><b>VS crânes requis</b></td>
+
+					<tr>
+						<td><img src="skull.png" /></td>
+						<td class="text-center"><b id="skull_team">0</b></td>
+						<td class="text-center"><b id="skull_opponent">0</b></td>
 					</tr>
 
 					<tr>
-						<td class="text-center"><b id="skull_team">540 389</b></td>
-						<td class="text-center"><b id="skull_opponent">540 389</b></td>
+						<td><img src="energy.png" /></td>
+						<td class="text-center"><b id="power_team">0</b></td>
+						<td class="text-center"><b id="power_opponent">0</b></td>
 					</tr>
-					
-					<tr class="bg-secondary">
-						<td class="text-center" colspan="2"><b>Énergie par combat</b></td>
-					</tr>
-					
+
 					<tr>
-						<td class="text-center"><b id="power_team">540 389</b></td>
-						<td class="text-center"><b id="power_opponent">540 389</b></td>
-					</tr>
-					
-					<tr class="bg-secondary">
-						<td class="text-center" colspan="2"><b>Valeur Attaque / Défense</b></td>
-					</tr>
-					
-					<tr>
-						<td class="text-center"><b id="attackdef_team">540 389</b></td>
-						<td class="text-center"><b id="attackdef_opponent">540 389</b></td>
+						<td><img src="calculator.png" /></td>
+						<td class="text-center"><b id="attackdef_team">0</b></td>
+						<td class="text-center"><b id="attackdef_opponent">0</b></td>
 					</tr>
 				</tbody>
 			</table>
-			
+
 			<div class="accordion">
 				<input type="radio" id="accordion-1" name="accordion-checkbox" hidden checked>
 				<label class="accordion-header bg-primary py-2" for="accordion-1">
@@ -72,7 +64,7 @@
 									<input class="form-input" type="number" min="0" max="59" step="1" id="time_minute" placeholder="minutes">
 								</td>
 							</tr>
-							
+
 							<tr>
 								<td>Qui attaque ?</td>
 								<td colspan="2">
@@ -82,7 +74,7 @@
 									</select>
 								</td>
 							</tr>
-							
+
 							<tr>
 								<td>Nombre de Crânes gagnés</td>
 								<td>
@@ -92,7 +84,7 @@
 									<input class="form-input" type="number" min="0" step="1" id="skull_win_opponent" placeholder="0">
 								</td>
 							</tr>
-							
+
 							<tr>
 								<td>Nombre de Héros</td>
 								<td>
@@ -102,7 +94,7 @@
 									<input class="form-input" type="number" min="0" max="65" step="1" id="nb_player_opponent" placeholder="0">
 								</td>
 							</tr>
-							
+
 							<tr>
 								<td>Nombre de Troupes</td>
 								<td>
@@ -112,31 +104,31 @@
 									<input class="form-input" type="number" min="0" step="1" id="nb_troop_opponent" placeholder="0">
 								</td>
 							</tr>
-							
+
 							<tr>
 								<td>Terrain</td>
 								<td colspan="2">
 									<select class="form-select" id="ground">
-										<option></option>
-										<option>Forêt</option>
-										<option>Prairie</option>
-										<option>Marais</option>
-										<option>Désert</option>
-										<option>Collines</option>
-										<option>Collines rocheuses</option>
-										<option>Collines sableuses</option>
+										<option selected value="0.7;1.3">Forêt (0.7 / 1.3)</option>
+										<option value="1;0.8">Prairie (1 / 0.8)</option>
+										<option value="1;1">Marais (1 / 1)</option>
+										<option value="0.8;0.5">Désert (0.8 / 0.5)</option>
+										<option value="0.9;1.1">Collines (0.9 / 1.1)</option>
+										<option value="0.7;1.5">Collines rocheuses (0.7 / 1.5)</option>
+										<option value="0.9;0.7">Collines sableuses (0.9 / 0.7)</option>
 									</select>
 								</td>
 							</tr>
-							
+
 							<tr>
 								<td>Niveau Tour</td>
 								<td colspan="2">
 									<select class="form-select" id="tower_level">
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
+										<option selected value="1">0</option>
+										<option value="1.2">1</option>
+										<option value="1.5">2</option>
+										<option value="2">3</option>
+										<option value="2.5">4</option>
 									</select>
 								</td>
 							</tr>
@@ -144,7 +136,7 @@
 					</table>
 				</div>
 			</div>
-			
+
 			<div class="accordion">
 				<input type="radio" id="accordion-2" name="accordion-checkbox" hidden>
 				<label class="accordion-header bg-primary py-2" for="accordion-2">
@@ -158,78 +150,78 @@
 								<td>Valeur d’attaque<br />Troupes +1</td>
 								<td>
 									<select class="form-select" id="attack_team_troop">
-										<option>0</option>
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
+										<option value="1">0</option>
+										<option value="2">1</option>
+										<option value="3">2</option>
+										<option value="4">3</option>
 									</select>
 								</td>
 								<td>
 									<select class="form-select" id="attack_opponent_troop">
-										<option>0</option>
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
+										<option value="1">0</option>
+										<option value="2">1</option>
+										<option value="3">2</option>
+										<option value="4">3</option>
 									</select>
 								</td>
 							</tr>
-							
+
 							<tr>
 								<td>Valeur de défense<br />Troupes +1</td>
 								<td>
 									<select class="form-select" id="def_team_troop">
-										<option>0</option>
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
+										<option value="1">0</option>
+										<option value="2">1</option>
+										<option value="3">2</option>
+										<option value="4">3</option>
 									</select>
 								</td>
 								<td>
 									<select class="form-select" id="def_opponent_troop">
-										<option>0</option>
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
+										<option value="1">0</option>
+										<option value="2">1</option>
+										<option value="3">2</option>
+										<option value="4">3</option>
 									</select>
 								</td>
 							</tr>
-							
+
 							<tr>
 								<td>Valeur d’attaque<br />Héros +5</td>
 								<td>
 									<select class="form-select" id="attack_team_hero">
-										<option>0</option>
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
+										<option value="0">0</option>
+										<option value="5">1</option>
+										<option value="10">2</option>
+										<option value="15">3</option>
 									</select>
 								</td>
 								<td>
 									<select class="form-select" id="attack_opponent_hero">
-										<option>0</option>
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
+										<option value="0">0</option>
+										<option value="5">1</option>
+										<option value="10">2</option>
+										<option value="15">3</option>
 									</select>
 								</td>
 							</tr>
-							
+
 							<tr>
 								<td>Valeur de défense<br />Héros +5</td>
 								<td>
 									<select class="form-select" id="def_team_hero">
-										<option>0</option>
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
+										<option value="0">0</option>
+										<option value="5">1</option>
+										<option value="10">2</option>
+										<option value="15">3</option>
 									</select>
 								</td>
 								<td>
 									<select class="form-select" id="def_opponent_hero">
-										<option>0</option>
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
+										<option value="0">0</option>
+										<option value="5">1</option>
+										<option value="10">2</option>
+										<option value="15">3</option>
 									</select>
 								</td>
 							</tr>
@@ -238,51 +230,78 @@
 								<td>Modificateur de défense<br />Tours de guet +%</td>
 								<td>
 									<select class="form-select" id="team_tower">
-										<option>0</option>
-										<option>10</option>
-										<option>20</option>
-										<option>30</option>
-										<option>40</option>
-										<option>50</option>
-										<option>60</option>
+										<option value="0">0</option>
+										<option value="0.1">10</option>
+										<option value="0.2">20</option>
+										<option value="0.3">30</option>
+										<option value="0.4">40</option>
+										<option value="0.5">50</option>
+										<option value="0.6">60</option>
 									</select>
 								</td>
 								<td>
 									<select class="form-select" id="opponent_tower">
-										<option>0</option>
-										<option>10</option>
-										<option>20</option>
-										<option>30</option>
-										<option>40</option>
-										<option>50</option>
-										<option>60</option>
+										<option value="0">0</option>
+										<option value="0.1">10</option>
+										<option value="0.2">20</option>
+										<option value="0.3">30</option>
+										<option value="0.4">40</option>
+										<option value="0.5">50</option>
+										<option value="0.6">60</option>
 									</select>
 								</td>
 							</tr>
-							
+
 							<tr>
 								<td>Coût en énergie<br />Guerre -%</td>
 								<td>
 									<select class="form-select" id="team_power">
-										<option>0</option>
-										<option>10</option>
-										<option>20</option>
-										<option>30</option>
-										<option>40</option>
-										<option>50</option>
-										<option>60</option>
+										<option value="0">0</option>
+										<option value="0.1">10</option>
+										<option value="0.2">20</option>
+										<option value="0.3">30</option>
+										<option value="0.4">40</option>
+										<option value="0.5">50</option>
+										<option value="0.6">60</option>
 									</select>
 								</td>
 								<td>
 									<select class="form-select" id="opponent_power">
-										<option>0</option>
-										<option>10</option>
-										<option>20</option>
-										<option>30</option>
-										<option>40</option>
-										<option>50</option>
-										<option>60</option>
+										<option value="0">0</option>
+										<option value="0.1">10</option>
+										<option value="0.2">20</option>
+										<option value="0.3">30</option>
+										<option value="0.4">40</option>
+										<option value="0.5">50</option>
+										<option value="0.6">60</option>
 									</select>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="accordion">
+				<input type="radio" id="accordion-3" name="accordion-checkbox" hidden>
+				<label class="accordion-header bg-primary py-2" for="accordion-3">
+					<i class="icon icon-arrow-right mr-1"></i>
+					<b>Valeurs statiques</b>
+				</label>
+				<div class="accordion-body">
+					<table class="table">
+						<tbody>
+							<tr>
+								<td>Valeur héro</td>
+								<td>
+									<input class="form-input" type="number" min="0" step="1" id="const_basedHeroesValue" value="2250">
+								</td>
+							</tr>
+
+							<tr>
+								<td>Valeur attaque <br />Héro</td>
+								<td>
+									<input class="form-input" type="number" min="0" step="1" id="const_basedAttackHeroesValue" value="75">
 								</td>
 							</tr>
 						</tbody>
@@ -294,69 +313,8 @@
 				<a href="https://discord.gg/szaPd6S" target="_blank">Rejoignez-nous sur Discord</a> - <a href="https://github.com/rr2-france98/rr2-france98.github.io" target="_blank">Voir le code source</a>
 			</footer>
 		</div>
-		
-		<script>
-		class Calculator {
-			constructor() {
-				// Render output
-				this.skull_team = document.getElementById('skull_team');
-				this.skull_opponent = document.getElementById('skull_opponent');
-				this.power_team = document.getElementById('power_team');
-				this.power_opponent = document.getElementById('power_opponent');
-				this.attackdef_team = document.getElementById('attackdef_team');
-				this.attackdef_opponent = document.getElementById('attackdef_opponent');
-				
-				// Default numeric value
-				[
-					'time_hour',
-					'time_minute',
-					'skull_win_team',
-					'skull_win_opponent',
-					'nb_player_team',
-					'nb_player_opponent',
-					'nb_troop_team',
-					'nb_troop_opponent',
-					'attack_team_troop',
-					'attack_opponent_troop',
-					'def_team_troop',
-					'def_opponent_troop',
-					'attack_team_hero',
-					'attack_opponent_hero',
-					'def_team_hero',
-					'def_opponent_hero',
-					'team_tower',
-					'opponent_tower',
-					'team_power',
-					'opponent_power'
-				].forEach(k => {
-					this[k] = 0;
-				});
-				
-				// Others default
-				this.attacker = "team";
-				this.tower_level = 1;
-				
-			}
-			
-			render() {
-				// Check ground
-				if(!this.ground)
-					return;
-					
-				// Calculate minutes left
-				const timer = this.time_hour * 60 + this.time_minute;
-			}
-		}
-		
-		const calc = new Calculator();
-		
-		// Add listeners
-		const $inputs = document.querySelectorAll('select, input');
-		[...$inputs].forEach($input => $input.addEventListener('change', e => {
-			calc[e.target.id] = e.target.value;
-			calc.render();
-		}));
 
-		</script>
+		<script type="text/javascript" src="regression.js"></script>
+		<script type="text/javascript" src="conquestCalculator.js" defer></script>
 	</body>
 </html>
