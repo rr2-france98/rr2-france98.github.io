@@ -22,7 +22,7 @@ const loadLang = () => {
 	if(['en', 'fr'].indexOf(lang) === -1)
 		lang = 'en';
 
-	fetch(`i18n-${i18n_file}-${lang}.json`)
+	fetch(`i18n/${i18n_file}-${lang}.json`)
   .then(response => response.json())
   .then(translate => {
 		curTranslate = translate;
