@@ -117,7 +117,7 @@ class Calculator {
 		this.power_opponent.innerText  = this.formatNumber(power_opponent);
 	}
 
-	formatNumber = (num) => {
+	formatNumber(num) {
 		if(!num || isNaN(num))
 			return '0';
 
