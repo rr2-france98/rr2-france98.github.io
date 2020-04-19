@@ -35,9 +35,7 @@ class Calculator {
 			'def_team_hero',
 			'def_opponent_hero',
 			'team_tower',
-			'opponent_tower',
-			'team_power',
-			'opponent_power'
+			'opponent_tower'
 		].forEach(k => {
 			this[k] = 0;
 		});
@@ -46,14 +44,16 @@ class Calculator {
 			'attack_team_troop',
 			'attack_opponent_troop',
 			'def_team_troop',
-			'def_opponent_troop'
+			'def_opponent_troop',
+			'team_power',
+			'opponent_power'
 		].forEach(k => {
 			this[k] = 1;
 		});
 
 		// Set others default
 		this.time_hour = 23;
-		this.time_minute = 59;
+		this.time_minute = 0;
 		this.attacker = "team";
 		this.tower_level = 1;
 		this.ground = "0.7;1.3";
@@ -110,8 +110,8 @@ class Calculator {
 		this.skull_opponent.innerText = this.formatNumber(skull_opponent);
 
 		// Energy cost
-		var power_team = Math.round(16 + 16 * attackdef_opponent / attackdef_team * ( 1 + this.team_power)),
-				power_opponent = Math.round(16 + 16 * attackdef_team / attackdef_opponent * ( 1 + this.opponent_power));
+		var power_team = Math.round((16 + 16 * attackdef_opponent / attackdef_team) * this.team_power),
+				power_opponent = Math.round((16 + 16 * attackdef_team / attackdef_opponent) * this.opponent_power);
 
 		this.power_team.innerText = this.formatNumber(power_team);
 		this.power_opponent.innerText  = this.formatNumber(power_opponent);
