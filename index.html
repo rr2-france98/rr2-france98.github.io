@@ -10,20 +10,31 @@
 
 		<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
 		<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+		<style>
+			body {
+				background-color: darkgrey;
+				color: black;
+				font-weight: bold;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container grid-xs">
-			<h1 class="text-center mb-0">Conquest Calculator</h1>
+			<h1 class="text-center mb-0" data-i18n i18n-key="conquest_calculator">Calculateur de Conquête</h1>
 			<div class="text-center mb-2 text-primary">
-				<b>Calc by Sir Lunar Knight - Dev by France 98</b>
+				<b data-i18n i18n-key="subtitle">Calc par Sir Lunar Knight - Dev par France 98</b>
+			</div>
+			<div class="text-center mb-2">
+				<img src="fr.svg" height="32" i18n-switcher="fr" /> <img src="us.svg" height="32" i18n-switcher="en" />
 			</div>
 
 			<table class="table">
 				<tbody>
 					<tr>
 						<td></td>
-						<td class="text-center"><b>Vous</b></td>
-						<td class="text-center"><b>Adversaire</b></td>
+						<td class="text-center"><b data-i18n i18n-key="you">Vous</b></td>
+						<td class="text-center"><b data-i18n i18n-key="opponent">Adversaire</b></td>
 					</tr>
 
 					<tr>
@@ -50,15 +61,15 @@
 				<input type="radio" id="accordion-1" name="accordion-checkbox" hidden checked>
 				<label class="accordion-header bg-primary py-2" for="accordion-1">
 					<i class="icon icon-arrow-right mr-1"></i>
-					<b>Paramètres</b>
+					<b data-i18n i18n-key="settings">Paramètres</b>
 				</label>
 				<div class="accordion-body">
 					<table class="table">
 						<tbody>
 							<tr>
-								<td>Temps restant</td>
+								<td data-i18n i18n-key="time_left">Temps restant</td>
 								<td>
-									<input class="form-input" type="number" min="0" max="23" step="1" id="time_hour" placeholder="Heures">
+									<input class="form-input" type="number" min="0" max="23" step="1" id="time_hour" placeholder="Hours">
 								</td>
 								<td>
 									<input class="form-input" type="number" min="0" max="59" step="1" id="time_minute" placeholder="minutes">
@@ -66,17 +77,17 @@
 							</tr>
 
 							<tr>
-								<td>Qui attaque ?</td>
+								<td data-i18n i18n-key="who_attacking">Qui attaque ?</td>
 								<td colspan="2">
 									<select class="form-select" id="attacker">
-										<option value="team">Vous</option>
-										<option value="opponent">Adversaire</option>
+										<option value="team" data-i18n i18n-key="you">Vous</option>
+										<option value="opponent" data-i18n i18n-key="opponent">Adversaire</option>
 									</select>
 								</td>
 							</tr>
 
 							<tr>
-								<td>Nombre de Crânes gagnés</td>
+								<td data-i18n i18n-key="number_skull_won">Nombre de Crânes gagnés</td>
 								<td>
 									<input class="form-input" type="number" min="0" step="1" id="skull_win_team" placeholder="0">
 								</td>
@@ -86,7 +97,7 @@
 							</tr>
 
 							<tr>
-								<td>Nombre de Héros</td>
+								<td data-i18n i18n-key="number_heroes">Nombre de Héros</td>
 								<td>
 									<input class="form-input" type="number" min="0" max="65" step="1" id="nb_player_team" placeholder="0">
 								</td>
@@ -96,7 +107,7 @@
 							</tr>
 
 							<tr>
-								<td>Nombre de Troupes</td>
+								<td data-i18n i18n-key="number_troops">Nombre de Troupes</td>
 								<td>
 									<input class="form-input" type="number" min="0" step="1" id="nb_troop_team" placeholder="0">
 								</td>
@@ -106,22 +117,22 @@
 							</tr>
 
 							<tr>
-								<td>Terrain</td>
+								<td data-i18n i18n-key="ground">Terrain</td>
 								<td colspan="2">
 									<select class="form-select" id="ground">
-										<option selected value="0.7;1.3">Forêt (0.7 / 1.3)</option>
-										<option value="1;0.8">Prairie (1 / 0.8)</option>
-										<option value="1;1">Marais (1 / 1)</option>
-										<option value="0.8;0.5">Désert (0.8 / 0.5)</option>
-										<option value="0.9;1.1">Collines (0.9 / 1.1)</option>
-										<option value="0.7;1.5">Collines rocheuses (0.7 / 1.5)</option>
-										<option value="0.9;0.7">Collines sableuses (0.9 / 0.7)</option>
+										<option selected value="0.7;1.3" data-i18n i18n-key="ground_forest">Forêt (0.7 / 1.3)</option>
+										<option value="1;0.8" data-i18n i18n-key="ground_meadow">Prairie (1 / 0.8)</option>
+										<option value="1;1" data-i18n i18n-key="ground_swamp">Marais (1 / 1)</option>
+										<option value="0.8;0.5" data-i18n i18n-key="ground_desert">Désert (0.8 / 0.5)</option>
+										<option value="0.9;1.1" data-i18n i18n-key="ground_hills">Collines (0.9 / 1.1)</option>
+										<option value="0.7;1.5" data-i18n i18n-key="ground_rocky_hills">Collines rocheuses (0.7 / 1.5)</option>
+										<option value="0.9;0.7" data-i18n i18n-key="ground_sandy_hills">Collines sableuses (0.9 / 0.7)</option>
 									</select>
 								</td>
 							</tr>
 
 							<tr>
-								<td>Niveau Tour</td>
+								<td data-i18n i18n-key="tower_level">Niveau Tour</td>
 								<td colspan="2">
 									<select class="form-select" id="tower_level">
 										<option selected value="1">0</option>
@@ -141,13 +152,13 @@
 				<input type="radio" id="accordion-2" name="accordion-checkbox" hidden>
 				<label class="accordion-header bg-primary py-2" for="accordion-2">
 					<i class="icon icon-arrow-right mr-1"></i>
-					<b>Technologies</b>
+					<b data-i18n i18n-key="technologies">Technologies</b>
 				</label>
 				<div class="accordion-body">
 					<table class="table">
 						<tbody>
 							<tr>
-								<td>Valeur d’attaque<br />Troupes +1</td>
+								<td data-i18n i18n-key="attack_value_troops">Valeur d’attaque<br />Troupes +1</td>
 								<td>
 									<select class="form-select" id="attack_team_troop">
 										<option value="1">0</option>
@@ -167,7 +178,7 @@
 							</tr>
 
 							<tr>
-								<td>Valeur de défense<br />Troupes +1</td>
+								<td data-i18n i18n-key="defense_value_troops">Valeur de défense<br />Troupes +1</td>
 								<td>
 									<select class="form-select" id="def_team_troop">
 										<option value="1">0</option>
@@ -187,7 +198,7 @@
 							</tr>
 
 							<tr>
-								<td>Valeur d’attaque<br />Héros +5</td>
+								<td data-i18n i18n-key="attack_value_heroes">Valeur d’attaque<br />Héros +5</td>
 								<td>
 									<select class="form-select" id="attack_team_hero">
 										<option value="0">0</option>
@@ -207,7 +218,7 @@
 							</tr>
 
 							<tr>
-								<td>Valeur de défense<br />Héros +5</td>
+								<td data-i18n i18n-key="defense_value_heroes">Valeur de défense<br />Héros +5</td>
 								<td>
 									<select class="form-select" id="def_team_hero">
 										<option value="0">0</option>
@@ -227,7 +238,7 @@
 							</tr>
 
 							<tr>
-								<td>Modificateur de défense<br />Tours de guet +%</td>
+								<td data-i18n i18n-key="defense_modifier_watchtower">Modificateur de défense<br />Tours de guet +%</td>
 								<td>
 									<select class="form-select" id="team_tower">
 										<option value="0">0</option>
@@ -253,7 +264,7 @@
 							</tr>
 
 							<tr>
-								<td>Coût en énergie<br />Guerre -%</td>
+								<td data-i18n i18n-key="energy_cost_war">Coût en énergie<br />Guerre -%</td>
 								<td>
 									<select class="form-select" id="team_power">
 										<option value="0">0</option>
@@ -282,7 +293,7 @@
 				</div>
 			</div>
 
-			<div class="accordion">
+			<div class="accordion d-none">
 				<input type="radio" id="accordion-3" name="accordion-checkbox" hidden>
 				<label class="accordion-header bg-primary py-2" for="accordion-3">
 					<i class="icon icon-arrow-right mr-1"></i>
@@ -310,11 +321,13 @@
 			</div>
 
 			<footer class="text-center mt-2 py-2">
-				<a href="https://discord.gg/szaPd6S" target="_blank">Rejoignez-nous sur Discord</a> - <a href="https://github.com/rr2-france98/rr2-france98.github.io" target="_blank">Voir le code source</a>
+				<a href="https://discord.gg/szaPd6S" target="_blank" data-i18n i18n-key="discord">Rejoignez-nous sur Discord</a> - <a href="https://github.com/rr2-france98/rr2-france98.github.io" target="_blank" data-i18n i18n-key="sourcecode">Voir le code source</a>
 			</footer>
 		</div>
 
+		<script>var i18n_file = "conquest";</script>
 		<script type="text/javascript" src="regression.js"></script>
 		<script type="text/javascript" src="conquestCalculator.js" defer></script>
+		<script type="text/javascript" src="i18n.js" defer></script>
 	</body>
 </html>
