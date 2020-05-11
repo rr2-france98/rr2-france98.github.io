@@ -64,6 +64,18 @@ class Calculator {
 
 		this.const_basedHeroesValue = 2250;
 		this.const_basedAttackHeroesValue = 75;
+
+		// Set values based on hash
+		const that = this;
+		document.location.hash.split('|').forEach(hash => {
+			const hashSplited = hash.split('=');
+			if(hashSplited.length == 2) {
+				that[hashSplited[0]] = (!isNaN(hashSplited[1])) ? parseFloat(hashSplited[1]) : hashSplited[1];
+				document.getElementById(hashSplited[0]).value = hashSplited[1];
+			}
+		});
+
+		this.render();
 	}
 
 	render() {
@@ -131,6 +143,18 @@ const calc = new Calculator();
 // Can use Proxy, but go simplier way
 const $inputs = document.querySelectorAll('select, input');
 [...$inputs].forEach($input => $input.addEventListener('change', e => {
+	// Disable for accordion checkbox
+	if(e.target.id.indexOf('accordion') !== -1)
+		return;
+
 	calc[e.target.id] = (!isNaN(e.target.value)) ? parseFloat(e.target.value) : e.target.value;
 	calc.render();
+
+	// Set hash to share link
+	const newHash = e.target.id + '=' + calc[e.target.id];
+	const replaceRegex = new RegExp(e.target.id + '=([a-z0-9;.])*', 'gi');
+	if(document.location.hash.indexOf(e.target.id + '=') === -1)
+		document.location.hash += '|' + newHash;
+	else
+		document.location.hash = document.location.hash.replace(replaceRegex, newHash)
 }));
