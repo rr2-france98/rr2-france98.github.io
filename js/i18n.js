@@ -19,7 +19,7 @@ const replaceText = (el) => {
 }
 
 const loadLang = () => {
-	if(['en', 'fr'].indexOf(lang) === -1)
+	if(['en', 'fr', 'es'].indexOf(lang) === -1)
 		lang = 'en';
 
 	fetch(`i18n/${i18n_file}-${lang}.json`)
