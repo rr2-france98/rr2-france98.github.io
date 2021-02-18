@@ -5,11 +5,24 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Calculateur de conquête pour le jeu Royal Revolt 2 de Flare Game - By Sir Lunar Knight - From France 98" />
-
 		<title>RR2 - Conquest calculator - Developped by France 98 - Calculator by Sir Lunar Knight</title>
-
 		<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
 		<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+		<style>
+			.clock-container {
+				display: flex;
+				position: relative;
+				justify-content: space-between;
+			}
+			.clock-container input {
+				max-width: 66%;
+			}
+			.clock-container button {
+			    position: absolute;
+			    right: 0;
+			    height: 100%;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container grid-xs">
@@ -61,7 +74,10 @@
 									<input class="form-input" type="number" min="0" max="23" step="1" id="time_hour" placeholder="Hours (23)">
 								</td>
 								<td>
-									<input class="form-input" type="number" min="0" max="59" step="1" id="time_minute" placeholder="minutes (00)">
+									<div class="clock-container">
+										<input class="form-input" type="number" min="0" max="59" step="1" id="time_minute" placeholder="minutes (00)">
+										<button id="timer">⏲️</button>
+									</div>
 								</td>
 							</tr>
 
@@ -319,6 +335,7 @@
 		<script>var i18n_file = "conquest";</script>
 		<script type="text/javascript" src="js/regression.js?v1"></script>
 		<script type="text/javascript" src="js/conquestCalculator.js?v3" defer></script>
+		<script type="text/javascript" src="js/clockTimer.js"></script>
 		<script type="text/javascript" src="js/i18n.js?v1" defer></script>
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
