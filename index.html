@@ -7,12 +7,32 @@
 		<meta name="description" content="Calculateur de conquête pour le jeu Royal Revolt 2 de Flare Game - By Bouahaza - From France 98" />
 
 		<title>RR2 - Conquest calculator - Developped by France 98 - Calculator by Sir Lunar Knight</title>
-
 		<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
 		<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+		<style>
+			.clock-container {
+				display: flex;
+				position: relative;
+				justify-content: space-between;
+				min-height: 35px;
+			}
+			.clock-container input {
+				max-width: 66%;
+			}
+			.clock-container button {
+				min-height: 35px;
+			    position: absolute;
+			    right: 0;
+			    height: 100%;
+			}
+			.slider {
+			    -webkit-transform: scaleX(-1);
+			    transform: scaleX(-1);
+			}
+		</style>
 	</head>
 	<body>
-		<div class="container grid-xs">
+		<div id="container" class="container grid-xs">
 			<h1 class="text-center mb-0" data-i18n i18n-key="conquest_calculator">Calculateur de Conquête</h1>
 			<div class="text-center mb-2">
 				<img src="img/fr.png" height="32" i18n-switcher="fr" class="c-hand" /> <img src="img/us.png" height="32" i18n-switcher="en" class="c-hand" /> <img src="img/es.png" height="32" i18n-switcher="es" class="c-hand" />
@@ -55,6 +75,18 @@
 				<div class="accordion-body">
 					<table class="table">
 						<tbody>
+							<tr>
+								<td data-i18n i18n-key="time_controls">Time</td>
+								<td>
+									<input type="range" min="0" max="1440" value="1440" class="slider" id="time_slider" />
+								</td>
+								<td>
+									<div class="clock-container">
+										<button id="timer">⏲️</button>
+									</div>
+								</td>
+							</tr>
+
 							<tr>
 								<td data-i18n i18n-key="time_left">Temps restant</td>
 								<td>
@@ -318,7 +350,7 @@
 
 		<script>var i18n_file = "conquest";</script>
 		<script type="text/javascript" src="js/regression.js?v1"></script>
-		<script type="text/javascript" src="js/conquestCalculator.js?v3" defer></script>
+		<script type="text/javascript" src="js/conquestCalculator.js?v3"></script>
 		<script type="text/javascript" src="js/i18n.js?v1" defer></script>
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
